@@ -40,34 +40,40 @@ export default function Contact() {
   };
 
   const socials = [
-  {
-    name: "GitHub",
-    link: "https://github.com/lastsem0417-arch",
-  },
-  {
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/aryan-singh-57a310398/",
-  },
-  {
-    name: "Instagram",
-    link: "https://www.instagram.com/aryxnnn._04/",
-  },
-  {
-    name: "Résumé",
-    link: "/Resume.pdf",
-  },
-];
+    {
+      name: "GitHub",
+      link: "https://github.com/lastsem0417-arch",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/aryan-singh-57a310398/",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/aryxnnn._04/",
+    },
+    {
+      name: "Résumé",
+      link: "/Aryan_Resume.pdf",
+    },
+  ];
 
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-[#f5f1ea] px-6 py-28 dark:bg-[var(--bg)]"
+      className="relative overflow-hidden bg-[var(--bg)] px-6 py-28 md:px-14"
     >
 
-      {/* Ambient */}
-      <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-purple-300/20 blur-[140px] dark:bg-[var(--purple-glow)]"></div>
+      {/* FORCE BG */}
+      <div className="absolute inset-0 bg-[var(--bg)]"></div>
 
-      <div className="mx-auto max-w-7xl">
+      {/* AMBIENT */}
+      <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-[var(--purple-glow)] opacity-70 blur-[140px]"></div>
+
+      {/* GRID */}
+      <div className="absolute inset-0 opacity-[0.025] [background-image:linear-gradient(to_right,#999_1px,transparent_1px),linear-gradient(to_bottom,#999_1px,transparent_1px)] [background-size:80px_80px]"></div>
+
+      <div className="relative z-10 mx-auto max-w-7xl">
 
         <div className="grid items-start gap-20 lg:grid-cols-[0.9fr_1fr]">
 
@@ -89,51 +95,72 @@ export default function Contact() {
             }}
           >
 
-            <p className="text-xs uppercase tracking-[0.45em] text-[var(--muted)]">
-              Contact
-            </p>
+            {/* LABEL */}
+            <div className="flex items-center gap-4">
 
-            <h2 className="mt-8 text-5xl font-semibold leading-[0.92] tracking-[-0.08em] md:text-7xl">
+              <div className="h-[1px] w-14 bg-[var(--text)]/20"></div>
+
+              <span className="text-[11px] uppercase tracking-[0.4em] text-[var(--muted)]">
+                Contact
+              </span>
+
+            </div>
+
+            {/* HEADING */}
+            <h2 className="mt-8 text-[3.5rem] font-semibold leading-[0.9] tracking-[-0.08em] text-[var(--text)] md:text-[6rem]">
+
               Let’s create
               <br />
-              something
+
+              <span className="bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
+                something
+              </span>
+
               <br />
               unforgettable.
+
             </h2>
 
-            <p className="mt-10 max-w-md text-lg leading-relaxed text-zinc-700 dark:text-zinc-400">
+            {/* TEXT */}
+            <p className="mt-10 max-w-md text-[16px] leading-[1.9] text-[var(--muted)] md:text-[17px]">
+
               Open for internships, freelance projects and premium frontend collaborations.
+
             </p>
 
-           {/* SOCIALS */}
-<div className="mt-16 flex flex-wrap gap-4">
+            {/* SOCIALS */}
+            <div className="mt-16 flex flex-wrap gap-4">
 
-  {socials.map((item, index) => (
+              {socials.map((item, index) => (
 
-    <motion.a
-      key={index}
-      href={item.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{
-        y: -4,
-      }}
-      className="group relative overflow-hidden rounded-full border border-[var(--border)] bg-white/80 px-6 py-3 text-sm text-[var(--text)] backdrop-blur-xl transition duration-500 hover:scale-[1.03] hover:bg-black hover:text-white dark:bg-[var(--card)] dark:hover:bg-white dark:hover:text-black"
-    >
+                <motion.a
+                  key={index}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{
+                    y: -4,
+                  }}
+                  className="group relative overflow-hidden rounded-full border border-[var(--border)] bg-[var(--card)] px-6 py-3 text-sm text-[var(--text)] backdrop-blur-2xl transition duration-500 hover:scale-[1.03] hover:bg-[var(--text)] hover:text-[var(--bg)]"
+                >
 
-      <span className="relative z-10 flex items-center gap-2">
-        {item.name}
+                  <span className="relative z-10 flex items-center gap-2">
 
-        {item.name === "Résumé" && (
-          <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
-        )}
-      </span>
+                    {item.name}
 
-    </motion.a>
+                    {item.name === "Résumé" && (
 
-  ))}
+                      <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
 
-</div>
+                    )}
+
+                  </span>
+
+                </motion.a>
+
+              ))}
+
+            </div>
 
             {/* EMAIL */}
             <div className="mt-20">
@@ -142,8 +169,10 @@ export default function Contact() {
                 Email
               </p>
 
-              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
+              <h3 className="mt-4 break-all text-2xl font-semibold tracking-[-0.04em] text-[var(--text)]">
+
                 aryansingh171517@gmail.com
+
               </h3>
 
             </div>
@@ -167,11 +196,11 @@ export default function Contact() {
             viewport={{
               once: true,
             }}
-            className="relative overflow-hidden rounded-[2.5rem] border border-[var(--border)] bg-[#fcfaf6] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.05)] dark:bg-[var(--card)] dark:shadow-none md:p-12"
+            className="relative overflow-hidden rounded-[2.5rem] border border-[var(--border)] bg-[var(--card)] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.05)] backdrop-blur-2xl md:p-12"
           >
 
-            {/* Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10"></div>
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-cyan-400/10"></div>
 
             <form
               ref={formRef}
@@ -191,7 +220,7 @@ export default function Contact() {
                   name="name"
                   required
                   placeholder="Enter your name"
-                  className="w-full rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
+                  className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-5 py-5 text-lg text-[var(--text)] outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)]"
                 />
 
               </div>
@@ -208,7 +237,7 @@ export default function Contact() {
                   name="email"
                   required
                   placeholder="Enter your email"
-                  className="w-full rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
+                  className="w-full rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-5 py-5 text-lg text-[var(--text)] outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)]"
                 />
 
               </div>
@@ -225,7 +254,7 @@ export default function Contact() {
                   name="message"
                   required
                   placeholder="Tell me about your idea..."
-                  className="w-full resize-none rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
+                  className="w-full resize-none rounded-2xl border border-[var(--border)] bg-[var(--bg)] px-5 py-5 text-lg text-[var(--text)] outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)]"
                 />
 
               </div>
@@ -239,7 +268,7 @@ export default function Contact() {
                 whileTap={{
                   scale: 0.97,
                 }}
-                className="group flex items-center gap-3 rounded-full bg-black px-8 py-5 text-sm font-medium text-white transition duration-500 hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+                className="group flex items-center gap-3 rounded-full bg-[var(--text)] px-8 py-5 text-sm font-medium text-[var(--bg)] transition duration-500 hover:scale-[1.02] hover:opacity-90"
               >
 
                 Send Message
