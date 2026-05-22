@@ -22,7 +22,7 @@ const navItems = [
   },
   {
   name: "Resume",
-  href: "/Aryan_Resume.pdf",
+  href: "/Resume.pdf",
 },
 ];
 

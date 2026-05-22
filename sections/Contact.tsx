@@ -54,7 +54,7 @@ export default function Contact() {
   },
   {
     name: "Résumé",
-    link: "/Aryan_Resume.pdf",
+    link: "/Resume.pdf",
   },
 ];
 
