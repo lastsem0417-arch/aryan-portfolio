@@ -40,19 +40,23 @@ export default function Contact() {
   };
 
   const socials = [
-    {
-      name: "GitHub",
-      link: "https://github.com/lastsem0417-arch",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/aryan-singh-57a310398/",
-    },
-    {
-      name: "Instagram",
-      link: "https://www.instagram.com/aryxnnn._04/",
-    },
-  ];
+  {
+    name: "GitHub",
+    link: "https://github.com/lastsem0417-arch",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/aryan-singh-57a310398/",
+  },
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/aryxnnn._04/",
+  },
+  {
+    name: "Résumé",
+    link: "/Aryan_Resume.pdf",
+  },
+];
 
   return (
     <section
@@ -101,25 +105,35 @@ export default function Contact() {
               Open for internships, freelance projects and premium frontend collaborations.
             </p>
 
-            {/* SOCIALS */}
-            <div className="mt-16 flex flex-wrap gap-4">
+           {/* SOCIALS */}
+<div className="mt-16 flex flex-wrap gap-4">
 
-              {socials.map((item, index) => (
-                <motion.a
-                  key={index}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{
-                    y: -4,
-                  }}
-                  className="rounded-full border border-[var(--border)] bg-white/80 px-6 py-3 text-sm text-[var(--text)] backdrop-blur-xl transition duration-500 hover:scale-[1.03] hover:bg-black hover:text-white dark:bg-[var(--card)] dark:hover:bg-white dark:hover:text-black"
-                >
-                  {item.name}
-                </motion.a>
-              ))}
+  {socials.map((item, index) => (
 
-            </div>
+    <motion.a
+      key={index}
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{
+        y: -4,
+      }}
+      className="group relative overflow-hidden rounded-full border border-[var(--border)] bg-white/80 px-6 py-3 text-sm text-[var(--text)] backdrop-blur-xl transition duration-500 hover:scale-[1.03] hover:bg-black hover:text-white dark:bg-[var(--card)] dark:hover:bg-white dark:hover:text-black"
+    >
+
+      <span className="relative z-10 flex items-center gap-2">
+        {item.name}
+
+        {item.name === "Résumé" && (
+          <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-[2px] group-hover:-translate-y-[2px]" />
+        )}
+      </span>
+
+    </motion.a>
+
+  ))}
+
+</div>
 
             {/* EMAIL */}
             <div className="mt-20">

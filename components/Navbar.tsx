@@ -20,6 +20,10 @@ const navItems = [
     name: "Contact",
     href: "#contact",
   },
+  {
+  name: "Resume",
+  href: "/Aryan_Resume.pdf",
+},
 ];
 
 export default function Navbar() {
