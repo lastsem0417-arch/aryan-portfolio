@@ -50,7 +50,7 @@ const projects = [
   {
     title: "Mariyam Mehendi",
     category: "Production E-Commerce Website",
-    image: "/project3.png",
+    image: "/Project3.png",
 
     description:
       "A modern production-level mehendi business platform designed for online bookings, product showcasing and premium customer interaction with a luxury aesthetic interface.",
