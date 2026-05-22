@@ -1,36 +1,209 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aryan Singh — Premium Developer Portfolio
 
-## Getting Started
+A cinematic and immersive developer portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and modern frontend interaction systems.
 
-First, run the development server:
+Designed with inspiration from award-winning digital experiences and premium creative agency websites.
+
+---
+
+## ✨ Live Website
+
+🌐 Live Demo:  
+https://your-vercel-link.vercel.app
+
+---
+
+# ⚡ Overview
+
+This portfolio was created to showcase:
+
+- Full Stack Development Skills
+- Creative Frontend Engineering
+- Premium UI/UX Systems
+- Modern Motion Design
+- Cinematic Web Experiences
+- Real Production Projects
+
+The entire experience focuses on smooth interactions, typography-driven layouts, immersive animations, responsive design, and luxury visual aesthetics.
+
+---
+
+# 🚀 Tech Stack
+
+## Frontend
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lenis Smooth Scroll
+
+---
+
+## Styling & UI
+
+- Tailwind CSS
+- Custom Theme System
+- Dark / Light Mode
+- Responsive Layout System
+- Premium Typography
+- Cinematic Motion Design
+
+---
+
+## Animation
+
+- Framer Motion
+- Smooth Scroll Physics
+- Page Reveal Transitions
+- Interactive Hover Systems
+- Cinematic Preloader
+- Custom Cursor
+
+---
+
+# 🎨 Features
+
+## Premium Cinematic UI
+A visually immersive experience inspired by award-winning creative developer portfolios.
+
+---
+
+## Responsive Design
+Fully optimized for:
+
+- Mobile
+- Tablets
+- Laptops
+- Large Screens
+
+---
+
+## Smooth Scrolling
+Implemented using **Lenis** for luxury inertia-style scrolling.
+
+---
+
+## Dynamic Theme System
+Custom dark and light mode with completely different visual atmospheres.
+
+---
+
+## Custom Cursor
+Interactive premium cursor experience with cinematic motion.
+
+---
+
+## Animated Preloader
+Luxury typography-based loading experience inspired by high-end agency websites.
+
+---
+
+## Interactive Sections
+
+- Hero Section
+- About Section
+- Skills
+- Services
+- Projects Showcase
+- Contact Section
+
+---
+
+# 📂 Featured Projects
+
+---
+
+## 🛒 Smart Grocery AI
+
+AI-powered grocery platform where products can be scanned and automatically added to the cart.
+
+### Features
+
+- AI Product Detection
+- Smart Cart System
+- Modern UI
+- Responsive Layout
+- Full Stack Architecture
+
+### Live Demo
+https://smart-grocery-frontend.onrender.com
+
+---
+
+## 🎵 BeatFlow Studio
+
+A real-time collaborative music platform with multiple user modules.
+
+### Features
+
+- Real-Time Collaboration
+- Video Calling
+- Audio Chat
+- Socket.io
+- WebRTC
+- Multiple User Roles
+
+### Roles
+
+- Admin
+- Rapper
+- Producer
+- Lyricist
+- Listener
+
+### Live Demo
+https://beatflow-studio-wnt0.onrender.com
+
+### GitHub
+https://github.com/lastsem0417-arch/BEATFLOW-STUDIO
+
+---
+
+## 🌿 Mariyam Mehendi
+
+Production-level eCommerce style website created for a real client requirement.
+
+### Features
+
+- Product Showcase
+- Modern Responsive UI
+- Full Working Frontend
+- Premium Brand Styling
+
+### Live Demo
+https://mariyam-mehendi-7k42.onrender.com/
+
+---
+
+# 🧠 What I Learned
+
+Through building this portfolio and projects, I explored:
+
+- Next.js App Router
+- React Component Architecture
+- Framer Motion Animations
+- Theme Management
+- Responsive UI Systems
+- Real-Time Communication
+- WebRTC Concepts
+- Socket.io
+- Performance Optimization
+- Modern UI/UX Principles
+- Production Deployment
+
+---
+
+# ⚙️ Installation
+
+Clone the repository:
 
 ```bash
+git clone https://github.com/yourusername/aryan-portfolio.git
+
+Install dependencies:
+npm install
+
+Run development server:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
