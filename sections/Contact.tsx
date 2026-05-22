@@ -2,16 +2,66 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 export default function Contact() {
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        "service_s4g98eh",
+        "template_b1nhsse",
+        formRef.current,
+        "OKAfjExv6pvHSzY1J"
+      )
+      .then(() => {
+
+        alert("Message sent successfully 😭🔥");
+
+        formRef.current?.reset();
+
+      })
+      .catch((error) => {
+
+        console.log(error);
+
+        alert("Something went wrong.");
+
+      });
+
+  };
+
+  const socials = [
+    {
+      name: "GitHub",
+      link: "https://github.com/lastsem0417-arch",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/aryan-singh-57a310398/",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/aryxnnn._04/",
+    },
+  ];
+
   return (
     <section
       id="contact"
-     className="relative overflow-hidden bg-[#f5f1ea] dark:bg-[var(--bg)] px-6 py-28"
+      className="relative overflow-hidden bg-[#f5f1ea] px-6 py-28 dark:bg-[var(--bg)]"
     >
 
       {/* Ambient */}
-      <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-purple-300/20 dark:bg-[var(--purple-glow)] blur-[140px]"></div>
+      <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full bg-purple-300/20 blur-[140px] dark:bg-[var(--purple-glow)]"></div>
 
       <div className="mx-auto max-w-7xl">
 
@@ -54,16 +104,18 @@ export default function Contact() {
             {/* SOCIALS */}
             <div className="mt-16 flex flex-wrap gap-4">
 
-              {["GitHub", "LinkedIn", "Instagram"].map((item, index) => (
+              {socials.map((item, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{
                     y: -4,
                   }}
-                  className="rounded-full border border-[var(--border)] bg-white/80 dark:bg-[var(--card)] px-6 py-3 text-sm text-[var(--text)] backdrop-blur-xl transition duration-500 hover:scale-[1.03] hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+                  className="rounded-full border border-[var(--border)] bg-white/80 px-6 py-3 text-sm text-[var(--text)] backdrop-blur-xl transition duration-500 hover:scale-[1.03] hover:bg-black hover:text-white dark:bg-[var(--card)] dark:hover:bg-white dark:hover:text-black"
                 >
-                  {item}
+                  {item.name}
                 </motion.a>
               ))}
 
@@ -77,7 +129,7 @@ export default function Contact() {
               </p>
 
               <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em]">
-                aryan@example.com
+                aryansingh171517@gmail.com
               </h3>
 
             </div>
@@ -101,13 +153,17 @@ export default function Contact() {
             viewport={{
               once: true,
             }}
-            className="relative overflow-hidden rounded-[2.5rem] border border-[var(--border)] bg-[#fcfaf6] dark:bg-[var(--card)] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.05)] md:p-12 dark:shadow-none"
+            className="relative overflow-hidden rounded-[2.5rem] border border-[var(--border)] bg-[#fcfaf6] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.05)] dark:bg-[var(--card)] dark:shadow-none md:p-12"
           >
 
             {/* Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-cyan-500/10"></div>
 
-            <form className="relative z-10 space-y-8">
+            <form
+              ref={formRef}
+              onSubmit={sendEmail}
+              className="relative z-10 space-y-8"
+            >
 
               {/* NAME */}
               <div>
@@ -118,6 +174,8 @@ export default function Contact() {
 
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="Enter your name"
                   className="w-full rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
                 />
@@ -133,6 +191,8 @@ export default function Contact() {
 
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="Enter your email"
                   className="w-full rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
                 />
@@ -148,6 +208,8 @@ export default function Contact() {
 
                 <textarea
                   rows={6}
+                  name="message"
+                  required
                   placeholder="Tell me about your idea..."
                   className="w-full resize-none rounded-2xl border border-[var(--border)] bg-[#f7f3ed] px-5 py-5 text-lg outline-none transition duration-500 placeholder:text-zinc-500 focus:border-[var(--text)] dark:bg-transparent"
                 />
@@ -156,6 +218,7 @@ export default function Contact() {
 
               {/* BUTTON */}
               <motion.button
+                type="submit"
                 whileHover={{
                   scale: 1.03,
                 }}

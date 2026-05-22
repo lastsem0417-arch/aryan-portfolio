@@ -6,7 +6,7 @@ import Projects from "@/sections/Projects";
 import Skills from "@/sections/Skills";
 import Services from "@/sections/Services";
 import Contact from "@/sections/Contact";
-
+import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -135,41 +135,65 @@ export default function Home() {
               </p>
 
               {/* BUTTONS */}
-              <div className="mt-10 flex flex-wrap gap-5">
+              {/* BUTTONS */}
+<div className="mt-10 flex flex-wrap gap-5">
 
-                <motion.a
-                  href="#projects"
-                  whileHover={{
-                    y: -3,
-                  }}
-                  whileTap={{
-                    scale: 0.97,
-                  }}
-                  className="group flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition duration-500 hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-                >
+  {/* PROJECTS */}
+  <motion.a
+    href="#projects"
+    whileHover={{
+      y: -3,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="group flex items-center gap-3 rounded-full bg-black px-8 py-4 text-sm font-medium text-white transition duration-500 hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+  >
 
-                  View Projects
+    View Projects
 
-                  <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+    <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
 
-                </motion.a>
+  </motion.a>
 
-                <motion.a
-                  href="#contact"
-                  whileHover={{
-                    y: -3,
-                  }}
-                  whileTap={{
-                    scale: 0.97,
-                  }}
-                  className="rounded-full border border-[var(--border)] bg-[var(--card)] px-8 py-4 text-sm text-[var(--text)] transition duration-500 hover:opacity-80"
-                >
+  {/* CONTACT */}
+  <motion.a
+    href="#contact"
+    whileHover={{
+      y: -3,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="rounded-full border border-[var(--border)] bg-[var(--card)] px-8 py-4 text-sm text-[var(--text)] transition duration-500 hover:opacity-80"
+  >
 
-                  Contact Me
+    Contact Me
 
-                </motion.a>
+  </motion.a>
 
-              </div>
+  {/* PLAY */}
+  <Link href="/play">
+
+    <motion.button
+      whileHover={{
+        y: -3,
+      }}
+      whileTap={{
+        scale: 0.97,
+      }}
+      className="group flex items-center gap-3 rounded-full border border-[var(--border)] bg-transparent px-8 py-4 text-sm text-[var(--text)] transition duration-500 hover:bg-[var(--card)]"
+    >
+
+      Play With Me
+
+      <ArrowUpRight className="h-4 w-4 transition duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+
+    </motion.button>
+
+  </Link>
+
+</div>
 
             </motion.div>
 
@@ -201,7 +225,7 @@ export default function Home() {
               <div className="absolute inset-0 z-10 bg-gradient-to-tr from-purple-500/10 via-transparent to-cyan-500/10 opacity-0 transition duration-700 group-hover:opacity-100"></div>
 
               <Image
-                src="/profile.jpg"
+                src="/Aryan.jpg"
                 alt="Aryan Singh"
                 width={460}
                 height={620}
